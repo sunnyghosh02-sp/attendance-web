@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomorrow's Attendance</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🚌 Tomorrow's Attendance</h1>
+
+    <div class="stats">
+
+        <div class="card">
+            <h2 id="totalCount">0</h2>
+            <p>Total</p>
+        </div>
+
+        <div class="card green">
+            <h2 id="goingCount">0</h2>
+            <p>Going</p>
+        </div>
+
+        <div class="card red">
+            <h2 id="notGoingCount">0</h2>
+            <p>Not Coming</p>
+        </div>
+
+    </div>
+
+    <div class="formBox">
+
+        <input
+            type="text"
+            id="nameInput"
+            placeholder="Enter your name">
+
+        <div class="radioBox">
+
+            <label>
+                <input
+                    type="radio"
+                    name="status"
+                    value="going"
+                    checked>
+
+                ✅ I Will Go Tomorrow
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="status"
+                    value="notgoing">
+
+                ❌ Not Coming
+
+            </label>
+
+        </div>
+
+        <button id="submitBtn">
+            Submit
+        </button>
+
+    </div>
+
+    <div class="searchBox">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search name...">
+
+    </div>
+
+    <div class="lists">
+
+        <div class="listCard">
+
+            <h2>
+                ✅ I Will Go Tomorrow
+                (<span id="goingNumber">0</span>)
+            </h2>
+
+            <div id="goingList"></div>
+
+        </div>
+
+        <div class="listCard">
+
+            <h2>
+                ❌ Not Coming
+                (<span id="notGoingNumber">0</span>)
+            </h2>
+
+            <div id="notGoingList"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="toast">
+    Saved Successfully
+</div>
+
+<div id="loader">
+    Saving...
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
